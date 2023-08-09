@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: ["media-cdn.tripadvisor.com"], // Add other domains if needed
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

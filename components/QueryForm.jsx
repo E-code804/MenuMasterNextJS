@@ -40,7 +40,7 @@ const QueryForm = ({ restaurants, origRestaurants, setRestaurants }) => {
       } else if (price === "None" && cuisine !== "None") {
         return r.cuisine.includes(cuisine);
       } else {
-        return inPriceRange(r.price_level) && r.cuisine.includes(cuisine);
+        return inPriceRange(r.price_level) || r.cuisine.includes(cuisine);
       }
     });
     setRestaurants(newRestaurants);

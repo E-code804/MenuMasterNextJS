@@ -28,6 +28,35 @@ const RestaurantDisplay = () => {
     };
     fetchRestaurants();
   }, [url]);
+  // db only needs to store the number of reviews, rating, and user reviews.
+  // useEffect(() => {
+  //   const fetchRestaurants = async () => {
+  //     const response = await fetch(
+  //       "https://travel-advisor.p.rapidapi.com/restaurants/list?location_id=293919",
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "X-RapidAPI-Key":
+  //             "",
+  //           "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+  //         },
+  //         cache: "no-store",
+  //       }
+  //     );
+  //     const json = await response.json();
+  //     //console.log(process.env.TRIP_KEY);
+
+  //     if (!response.ok) {
+  //       console.log("error");
+  //     } else {
+  //       // setOrigRestaurants(json.data);
+  //       // setRestaurants(json.data);
+  //       // console.log(restaurants);
+  //       console.log(json.data);
+  //     }
+  //   };
+  //   fetchRestaurants();
+  // });
 
   return (
     <div id="scrollTarget" className="display-restaurants w-full padding-x">

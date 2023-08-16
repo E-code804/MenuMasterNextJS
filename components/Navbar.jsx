@@ -3,6 +3,7 @@ import { useGlobalContext } from "@/app/context/context";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 import ErrorMsg from "./ErrorMsg";
 
 // make a lot of components
@@ -84,7 +85,14 @@ const Navbar = () => {
       {displaySignIn && (
         <div className="confirm-delete">
           <div className="delete-container">
-            <h1 className="mb-3">Please enter your credentials</h1>
+            <div className="w-full flex justify-between">
+              <h1 className="mb-3">Please enter your credentials</h1>
+              <IoCloseOutline
+                onClick={() => setDisplaySignIn(false)}
+                size={24}
+                className="text-red-500 cursor-pointer"
+              />
+            </div>
             <input
               placeholder="Username"
               value={userName}
@@ -97,9 +105,9 @@ const Navbar = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <p>To demo: username=Demo, password=demo123</p>
-            <div className="mt-3 w-full flex justify-evenly">
+            <div className="mt-3 w-full flex ">
               <button
-                className="rounded-md p-2 bg-blue-500 text-white"
+                className="rounded-md p-2 mr-2 bg-blue-500 text-white"
                 onClick={() => handleEnterClick("in")}
               >
                 Sign In

@@ -7,7 +7,6 @@ const RestaurantDisplay = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [origRestaurants, setOrigRestaurants] = useState([]);
   const url = process.env.API_URL;
-  console.log(url);
 
   useEffect(() => {
     const fetchRestaurants = () => {
@@ -74,7 +73,7 @@ const RestaurantDisplay = () => {
         />
       </div>
       <div className="container px-5 py-24 mx-auto flex flex-wrap justify-center">
-        {restaurants &&
+        {restaurants ? (
           restaurants.map((r) => (
             <Restaurant
               key={r._id}
@@ -84,7 +83,19 @@ const RestaurantDisplay = () => {
               rating={r.rating}
               num_reviews={r.num_reviews}
             />
-          ))}
+          ))
+        ) : (
+          <div className="w-full">
+            <div className="rounded-3xl h-full p-4 xl:w-1/3 lg:w-1/2 xs:w-1/2">
+              <div className="bg-gray-100 rounded-md overflow-hidden animate-pulse">
+                <div className="h-[550px] w-full bg-gray-300"></div>
+                <div className="h-20 w-full bg-gray-300 mt-4"></div>
+                <div className="h-10 w-2/3 bg-gray-300 mt-2"></div>
+                <div className="h-8 w-1/3 bg-gray-300 mt-2"></div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

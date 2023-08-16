@@ -40,7 +40,6 @@ const RestaurantDisplay = () => {
           Discover something new
         </h1>
         <QueryForm
-          restaurants={restaurants}
           origRestaurants={origRestaurants}
           setRestaurants={setRestaurants}
         />

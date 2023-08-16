@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const QueryForm = ({ restaurants, origRestaurants, setRestaurants }) => {
+const QueryForm = ({ origRestaurants, setRestaurants }) => {
   const [price, setPrice] = useState("None");
   const [cuisine, setCuisine] = useState("None");
   const cuisineSet = new Set();
